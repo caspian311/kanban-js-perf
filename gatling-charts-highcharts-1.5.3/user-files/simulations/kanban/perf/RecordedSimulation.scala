@@ -10,7 +10,7 @@ import assertions._
 class RecordedSimulation extends Simulation {
 
    val httpConf = httpConfig
-         .baseURL("http://localhost")
+         .baseURL("http://localhost:3000")
          .acceptHeader("*/*")
          .acceptEncodingHeader("gzip, deflate")
          .acceptLanguageHeader("en-US,en;q=0.5")
