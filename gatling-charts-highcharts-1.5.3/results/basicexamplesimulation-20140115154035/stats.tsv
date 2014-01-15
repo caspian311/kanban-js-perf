@@ -1,0 +1,13 @@
+name	nbRequest	nbRequestOK	nbRequestKO	minResponseTime	minResponseTimeOK	minResponseTimeKO	maxResponseTime	maxResponseTimeOK	maxResponseTimeKO	meanResponseTime	meanResponseTimeOK	meanResponseTimeKO	deviation	deviationOK	deviationKO	percentile1	percentile1OK	percentile1KO	percentile2	percentile2OK	percentile2KO	group1Name	group1Count	group1Percentage	group2Name	group2Count	group2Percentage	group3Name	group3Count	group3Percentage	group4Name	group4Count	group4Percentage	meanNumberOfRequestsPerSecond	meanNumberOfRequestsPerSecondOK	meanNumberOfRequestsPerSecondKO
+Global Information	300	200	100	40	40	70	1000	1000	860	89	76	113	94	98	81	150	120	160	470	470	240	t < 800 ms	198	66	800 ms < t < 1200 ms	2	0	t > 1200 ms	0	0	failed	100	33	3	2	1
+request_2	10	10	0	40	40	-1	50	50	-1	43	43	-1	5	5	-1	50	50	-1	50	50	-1	t < 800 ms	10	100	800 ms < t < 1200 ms	0	0	t > 1200 ms	0	0	failed	0	0	0	0	-1
+request_3	10	10	0	40	40	-1	70	70	-1	47	47	-1	9	9	-1	70	70	-1	70	70	-1	t < 800 ms	10	100	800 ms < t < 1200 ms	0	0	t > 1200 ms	0	0	failed	0	0	0	0	-1
+request_10	10	10	0	40	40	-1	40	40	-1	40	40	-1	0	0	-1	40	40	-1	40	40	-1	t < 800 ms	10	100	800 ms < t < 1200 ms	0	0	t > 1200 ms	0	0	failed	0	0	0	0	-1
+request_1	10	10	0	70	70	-1	150	150	-1	90	90	-1	21	21	-1	150	150	-1	150	150	-1	t < 800 ms	10	100	800 ms < t < 1200 ms	0	0	t > 1200 ms	0	0	failed	0	0	0	0	-1
+request_6	50	50	0	40	40	-1	120	120	-1	65	65	-1	21	21	-1	120	120	-1	120	120	-1	t < 800 ms	50	100	800 ms < t < 1200 ms	0	0	t > 1200 ms	0	0	failed	0	0	0	0	-1
+request_7	50	0	50	70	-1	70	860	-1	860	110	-1	110	109	-1	109	140	-1	140	860	-1	860	t < 800 ms	0	0	800 ms < t < 1200 ms	0	0	t > 1200 ms	0	0	failed	50	100	0	-1	0
+request_4	50	50	0	50	50	-1	1000	1000	-1	112	112	-1	178	178	-1	470	470	-1	1000	1000	-1	t < 800 ms	48	96	800 ms < t < 1200 ms	2	4	t > 1200 ms	0	0	failed	0	0	0	0	-1
+request_5	50	0	50	70	-1	70	240	-1	240	116	-1	116	35	-1	35	190	-1	190	240	-1	240	t < 800 ms	0	0	800 ms < t < 1200 ms	0	0	t > 1200 ms	0	0	failed	50	100	0	-1	0
+request_8	50	50	0	40	40	-1	210	210	-1	67	67	-1	29	29	-1	120	120	-1	210	210	-1	t < 800 ms	50	100	800 ms < t < 1200 ms	0	0	t > 1200 ms	0	0	failed	0	0	0	0	-1
+request_9	10	10	0	40	40	-1	440	440	-1	90	90	-1	119	119	-1	440	440	-1	440	440	-1	t < 800 ms	10	100	800 ms < t < 1200 ms	0	0	t > 1200 ms	0	0	failed	0	0	0	0	-1
+
