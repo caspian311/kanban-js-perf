@@ -18,8 +18,8 @@ class KanbanJSSimulation extends Simulation {
          .userAgentHeader("Mozilla/5.0 (Macintosh; Intel Mac OS X 10.9; rv:25.0) Gecko/20100101 Firefox/25.0")
 
 
-   val requestStaticContent = scenario("Static content")
-      .exec(http("/")
+   val requestStaticContent = 
+      exec(http("/")
                .get("/")
          )
       .exec(http("/vendor/css/bootstrap-glyphicons.css")
@@ -53,15 +53,14 @@ class KanbanJSSimulation extends Simulation {
                .get("/favicon.ico")
          )
    
-   val loginScenario = scenario("Login")
-      .exec(http("/login")
+   val loginScenario = 
+      exec(http("/login")
                .post("/login")
                   .param("""username""", """test@test.com""")
                   .param("""password""", """test""")
          )
 
-   val homePageStaticContentScenario = scenario("Home page static content") 
-      .exec(http("/vendor/css/bootstrap.min.css")
+   val homePageStaticContentScenario = exec(http("/vendor/css/bootstrap.min.css")
                .get("/vendor/css/bootstrap.min.css")
          )
       .exec(http("/vendor/css/bootstrap-glyphicons.css")
@@ -159,7 +158,7 @@ class KanbanJSSimulation extends Simulation {
                     """)
          )
          
-   val dragCardToLeftScenario = scenario("Drag card to right")
+   val dragCardToLeftScenario = scenario("Drag card to left")
       .exec(http("PUT /queues")
                .put("/queues")
                   .body(s => """
@@ -180,19 +179,19 @@ class KanbanJSSimulation extends Simulation {
                       """)
          )
 
-   val waitASecond = scenario("Wait for a second")
-      .pause(1)
+   val waitASecond = 
+      pause(1)
          
-   val numberOfUsers = 100
+   val numberOfUsers = 50
    
    setUp(
-       requestStaticContent.users(numberOfUsers).protocolConfig(httpConf),
-       loginScenario.users(numberOfUsers).protocolConfig(httpConf),
-       waitASecond.users(numberOfUsers).protocolConfig(httpConf),
-       homePageStaticContentScenario.users(numberOfUsers).protocolConfig(httpConf),
-       homePageScenario.users(numberOfUsers).protocolConfig(httpConf),
-       dragCardToRightScenario.users(numberOfUsers).protocolConfig(httpConf),
-       homePageScenario.users(numberOfUsers).protocolConfig(httpConf),
-       dragCardToLeftScenario.users(numberOfUsers).protocolConfig(httpConf)
+       scenario("Static content").exec(requestStaticContent).users(numberOfUsers).protocolConfig(httpConf),
+       scenario("Login").exec(loginScenario).users(numberOfUsers).protocolConfig(httpConf),
+       scenario("Wait for a second").exec(waitASecond).users(numberOfUsers).protocolConfig(httpConf),
+       scenario("Home page static content").exec(homePageStaticContentScenario).users(numberOfUsers).protocolConfig(httpConf),
+       scenario("Home page").exec(homePageScenario).users(numberOfUsers).protocolConfig(httpConf),
+       scenario("Drag card to right").exec(dragCardToRightScenario).users(numberOfUsers).protocolConfig(httpConf),
+       scenario("Home page 2").exec(homePageScenario).users(numberOfUsers).protocolConfig(httpConf),
+       scenario("Drag card to left").exec(dragCardToLeftScenario).users(numberOfUsers).protocolConfig(httpConf)
        )
 }
