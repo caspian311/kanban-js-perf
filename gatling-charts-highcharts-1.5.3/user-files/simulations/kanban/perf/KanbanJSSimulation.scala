@@ -10,7 +10,7 @@ import assertions._
 class KanbanJSSimulation extends Simulation {
 
    val httpConf = httpConfig
-         .baseURL("http://localhost")
+         .baseURL("http://192.168.33.10")
          .acceptHeader("*/*")
          .acceptEncodingHeader("gzip, deflate")
          .acceptLanguageHeader("en-US,en;q=0.5")
@@ -25,9 +25,9 @@ class KanbanJSSimulation extends Simulation {
       .exec(http("/vendor/css/bootstrap-glyphicons.css")
                .get("/vendor/css/bootstrap-glyphicons.css")
          )
-      .exec(http("/css/site.css")
-               .get("/css/site.css")
-         )
+//      .exec(http("/css/site.css")
+//               .get("/css/site.css")
+//         )
       .exec(http("/vendor/css/bootstrap.min.css")
                .get("/vendor/css/bootstrap.min.css")
          )
@@ -49,9 +49,9 @@ class KanbanJSSimulation extends Simulation {
       .exec(http("/vendor/scripts/jquery-ui-1.10.3.custom.min.js")
                .get("/vendor/scripts/jquery-ui-1.10.3.custom.min.js")
          )
-      .exec(http("/favicon.ico")
-               .get("/favicon.ico")
-         )
+//      .exec(http("/favicon.ico")
+//               .get("/favicon.ico")
+//         )
    
    val loginScenario = 
       exec(http("/login")
@@ -182,7 +182,7 @@ class KanbanJSSimulation extends Simulation {
    val waitASecond = 
       pause(1)
          
-   val numberOfUsers = 50
+   val numberOfUsers = 1000
    
    setUp(
        scenario("Static content").exec(requestStaticContent).users(numberOfUsers).protocolConfig(httpConf),
